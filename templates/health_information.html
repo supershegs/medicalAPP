@@ -1,0 +1,36 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard Page</title>
+    <link rel="stylesheet" href="{% static 'css/dashbord.css' %}">
+  </head>
+  <body>
+    <div class="dashboard-header">
+      <div class="medic-logo-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}">
+      </div>
+      {% if user %}
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
+        <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
+        <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+        <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a>
+    </div>
+    <h2>Health Information List</h2>
+    <ul>
+        {% for health_info in health_info_list %}
+        <li>
+            <strong>User:</strong> {{ health_info.user.username }}<br>
+            <strong>Health Condition:</strong> {{ health_info.health_condition }}<br>
+            <strong>Drugs Prescribed:</strong> {{ health_info.drugs_prescribed }}<br>
+            <strong>Consultant Involved:</strong> {{ health_info.consultant }}<br>
+            <!-- Add similar fields for other model fields -->
+        </li>
+        {% endfor %}
+        {% endif %}
+    </ul>
+  </body>
+</html>

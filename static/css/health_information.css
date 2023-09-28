@@ -1,0 +1,62 @@
+/* CSS for health_information_update.html and health_information_creation.html */
+
+/* Container for the form */
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+  }
+  
+  /* Form label style */
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* Form input and textarea style */
+  .form-group input[type="text"],
+  .form-group input[type="number"],
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Checkbox style */
+  .form-group input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  /* Submit button style */
+  .form-group button[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Style for the list of health information in health_information.html */
+  .health-info-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .health-info-list li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+  }
+  
+  /* Additional styles can be added as needed */
+  

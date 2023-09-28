@@ -91,11 +91,6 @@ class profileView(View):
             return render(request,'profile.html')
         return redirect('index')
 
-class historyView(View):
-    def get(self, request):
-        if request.user.is_authenticated:
-            return render(request,'history.html')
-        return redirect('index')
 
 class imageView(View):
     def get(self, request):
@@ -158,9 +153,62 @@ class consultantView(View):
         return render(request, 'create_consultant.html', {'form': form})
     
 
-class health_information(View):
+class HealthInformationView(View):
     def get(self, request):
-        pass
+        if request.user.is_authenticated:
+            health_info_list = HealthInformation.objects.all()
+            return render(request, 'health_information.html', {'health_info_list': health_info_list})
+        else:
+            return redirect('login')  # Redirect to login page if user is not authenticated
+class HealthInformationCreate(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            consultants =   Consultant.objects.all()
+            return render(request, 'health_information_creation.html', {'consultants': consultants})
+        else:
+            return redirect('login')  
+    
+    def post(self, request):
+        if request.user.is_authenticated:
+            form = HealthInformationForm(request.POST)
+            consultants =   Consultant.objects.all()
+
+            if form.is_valid():
+                health_info = form.save(commit=False)
+                health_info.user = request.user
+                health_info.save()
+                return redirect('health_information')
+            else:
+                print('invalid form submitted')
+        else:
+            return redirect('login')
+        return render(request,'health_information_creation.html',  {
+            'form': form,
+            'consultants': consultants})
+class HealthInformationUpdate(View): 
+    def get(self, request, pk):
+        if request.user.is_authenticated:
+            health_info = HealthInformation.objects.get(pk=pk)
+            form = HealthInformationForm(instance=health_info)
+            consultants =   Consultant.objects.all()
+            return render(request, 'health_information_update.html', {
+                'form': form,
+                'health_info': health_info,
+                'consultants': consultants})
+        else:
+            return redirect('login')  
+           
+    def put(self, request, pk):
+        if request.user.is_authenticated:
+            health_info = HealthInformation.objects.get(pk=pk)
+            form = HealthInformationForm(request.POST, instance=health_info)
+            if form.is_valid():
+                form.save()
+                return redirect('health_information')
+        else:
+            return redirect('login')
+        return render(request,'health_information_update.html',  {'form': form} )
+
 
 
 class logoutView(APIView):
@@ -169,7 +217,11 @@ class logoutView(APIView):
         return redirect('login')
 
     
-
-
-        
+class historyView(View):
+    def get(self, request):
+        health_info_list = HealthInformation.objects.all()
+        if request.user.is_authenticated:
+            return render(request,'history.html', {'health_info_list': health_info_list})
+        return redirect('index')
+       
         

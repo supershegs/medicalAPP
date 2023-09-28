@@ -1,0 +1,174 @@
+.reminder-header {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    background-color: #e6f9ff;
+    justify-content: space-between;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 70px;
+    align-items: center;
+  }
+  
+  .medic-old-logo {
+    height: 50px;
+    margin-left: 60px;
+    vertical-align: middle;
+  }
+  
+  .medic-logo-container {
+    height: 40px;
+    vertical-align: middle;
+    
+  }
+  
+  .remaining-header {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #008080;
+    
+    
+  }
+  
+  .remaining-header:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .remaining-header:active {
+    opacity: 0.5;
+  }
+  
+  
+  
+  .last-header {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #008080;
+    vertical-align: middle;
+    margin-right: 70px;
+  }
+  
+  .last-header:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .last-header:active {
+    opacity: 0.5;
+  }
+  
+  .prof-image {
+    height: 50px;
+    border-radius: 25px;
+    vertical-align: middle;
+    margin-left: 20px;
+  }
+  
+  .reminder-on-page {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+  }
+  
+  .on-page-first-column {
+    margin-top: 70px;
+  }
+  
+  .reminder-profile-pic {
+    height: 240px;
+    border-radius: 120px;
+  }
+  
+  .weclcome-profile {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 70px;
+  }
+  
+  .on-page-second-column {
+    background-color: #e6f9ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 15px;
+  }
+  
+  .reminder-add {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    font-size: 20px;
+    color: #008080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin: 35px;
+    
+  
+  }
+  
+  .reminder-add:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .reminder-add:active {
+    opacity: 0.5;
+  }
+  
+  .reminders {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    
+  }
+  
+  .times {
+    float: right;
+    margin-right: 10px;
+  
+  }
+  
+  .appointment-shedules {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #008080;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+  }
+  
+  .appointment-date {
+    color: white;
+    padding-left: 10px;
+    margin-left: 10px;
+    padding-top: 40px;
+    padding-bottom: 0px;
+  }
+  
+  .appointment-time {
+    font-weight: bold;
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+  
+    

@@ -1,0 +1,102 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard Page</title>
+    <link rel="stylesheet" href="{% static 'css/dashbord.css' %}">
+    <link rel="stylesheet" href="{%static 'css/health_information.css' %}">
+  </head>
+  <body>
+    <div class="dashboard-header">
+      <div class="medic-logo-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}">
+      </div>
+      {% if user %}
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
+        <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
+        <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+        <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a>
+    </div>
+    <h2>Health Information List</h2>
+    <form method="post">
+    {% csrf_token %}
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{field }}, {{error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    <div class="form-group">
+      <label for="health_condition">Health Condition:</label>
+      <textarea name="health_condition" id="health_condition">{{ form.health_condition.value }}</textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="drugs_prescribed">Drugs Prescribed:</label>
+      <textarea name="drugs_prescribed" id="drugs_prescribed">{{ form.drugs_prescribed.value }}</textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="complaints">Complaints:</label>
+      <textarea name="complaints" id="complaints">{{ form.complaints.value }}</textarea>
+    </div>
+    
+    <div class="form-group">
+      <label for="consultant">Consultant:</label>
+      <select name="consultant" id="consultant">
+        <option value="">Select a Consultant</option>
+        {% for consultant in consultants %}
+          <option value="{{ consultant.id }}">{{ consultant.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    
+    <div class="form-group">
+      <label for="call_consultant">Call Consultant:</label>
+      <input type="checkbox" name="call_consultant" id="call_consultant" {% if form.call_consultant.value %}checked{% endif %}>
+    </div>
+    
+    <div class="form-group">
+      <label for="height">Height:</label>
+      <input type="text" name="height" id="height" value="{{ form.height.value }}">
+    </div>
+    
+    <div class="form-group">
+      <label for="body_weight">Body Weight:</label>
+      <input type="text" name="body_weight" id="body_weight" value="{{ form.body_weight.value }}">
+    </div>
+    
+    <div class="form-group">
+      <label for="heart_rate">Heart Rate:</label>
+      <input type="text" name="heart_rate" id="heart_rate" value="{{ form.heart_rate.value }}">
+    </div>
+    
+    <div class="form-group">
+      <label for="existing_conditions">Existing Conditions:</label>
+      <textarea name="existing_conditions" id="existing_conditions">{{ form.existing_conditions.value }}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="blood_group">blood_group:</label>
+      <input type="text" name="blood_group" id="blood_group" value="{{ form.blood_group.value }}">
+    </div>
+
+    <div class="form-group">
+      <label for="blood_pressure">blood pressure :</label>
+      <input type="text" name="blood_pressure" id="blood_pressure" value="{{ form.blood_pressure.value }}">
+    </div>
+    {% endif %}
+    
+    <button type="submit">Create</button>
+  </form>
+
+    
+  </body>

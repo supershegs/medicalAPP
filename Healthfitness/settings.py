@@ -156,6 +156,8 @@ STATIC_URL = "static/"
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+STATIC_ROOT = 'C:\\Users\\oluwasegun.tinuala\\Desktop\\medicalApp\\new_static'
+
 
 
 

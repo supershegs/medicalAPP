@@ -29,21 +29,19 @@
           </div>
           <div class="medical-description">
             <p class="age">Age&colon; {{user.age}}</p>
+            {% for health_info in health_info_list %}
             <hr class="line line1">
             <p class="description-headings">Health condition &colon;</p>
-            <p class="description">Diabetic and asthmatic since 2017</p>
+            <p class="description">{{health_info.health_condition}}</p>
             <hr class="line line2">
             <p class="description-headings">Drugs prescribed &colon;</p>
-            <p class="description">Alphabetic &amp; Ventolin</p>
+            <p class="description">{{health_info.drugs_prescribed}}</p>
             <hr class="line line3">
             <p class="description-headings">Complains &colon;</p>
-            <p class="complains-one">1. Back pain, sharp pain in the knees</p>
-            <p class="complains-two">2. Can't see properly with the left eye</p>
-            <p class="complains-three">3. Feeling nauseous after taking Alphabetic</p>
-            <p class="complains-four">4. Stomach ache after eating oily food</p>
+            <p class="complains-one">{{health_info.complaints}}</p>
             <hr class="line line4">
             <p class="description-headings">Consultant &colon;</p>
-            <p class="description">Not yet assigned</p>
+            <p class="description">{{health_info.consultant}}</p>
             <hr class="line line5">
             <p class="description-headings">Call consultant</p>
             <p class="description">audio call / video call</p>
@@ -51,11 +49,12 @@
         </div>
       </div>
       <div class="second-page-column">
-        <p class="add-record">Add medical record</p>
+        <a href="{% url 'health_information_creation' %}"style="text-decoration: none"><p class="add-record">Add medical record</p></a>
         <button class="uplodad-button">Upload file</button>
         <p class="upload-format">PDF files only</p>
+        {% endfor %}
+        {% endif %}
       </div>
-      {% endif%}
     </div>
   </body>
 </html>

@@ -1,0 +1,136 @@
+.medic-app-container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .medic-app-logo {
+    height: 150px;  
+  }
+  
+  
+  
+  .signup-button {
+    display: block;
+    padding-left: 95px;
+    padding-right: 95px;
+    padding-bottom: 14px;
+    padding-top: 14px;
+    background-color:rgb(7, 7, 77);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    margin-top: 25px;
+    cursor: pointer;
+    
+  }
+  
+  .signup-button:hover {
+    opacity: 0.7;
+  }
+  
+  
+  .signup-button:active {
+    opacity: 0.5;
+  }
+  
+  .signup-button-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .google-logo {
+    height: 20px;
+    vertical-align: middle;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  
+  .google-signup {
+    color: rgb(60, 133, 244);
+    font-size: 18x;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .google-signup:hover {
+    text-decoration: underline;
+  }
+  .google-signup:active {
+    opacity: 0.6;
+  }
+  
+  .fb-logo {
+    height: 18px;
+    vertical-align: middle;
+    border-radius: 9px;
+    margin-right: 10px;
+    }
+  
+  .fb-signup {
+    color: rgb(60, 133, 244);
+    font-size: 18x;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+  .fb-signup:hover {
+    text-decoration: underline;
+  }
+  .fb-signup:active {
+    opacity: 0.6;
+  }
+  
+  .middle-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 140px;
+    row-gap: 20px;
+    padding-left: 130px;
+    padding-right: 130px;
+  
+  }
+
+.alert.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24; 
+    border-color: #f5c6cb; 
+    padding: 10px 15px;
+    margin-bottom: 10px;  
+}
+  
+  .middle-section input[type="text"], .middle-section input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+/* 
+  #imageInput {
+    display: none;
+} */
+
+#imageInput,
+#cameraButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#displayImage {
+    max-width: 100%;
+    display: none;
+    margin-top: 20px;
+}

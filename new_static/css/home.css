@@ -1,0 +1,97 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-top: 40px;
+padding-left: 40px;
+padding-bottom: 40px;
+
+
+}
+
+.oldman-photo {
+
+max-width: 50%;
+
+}
+
+.oldman-photo img {
+width: 100%;
+height: auto;
+}
+
+.homepage-text {
+flex: 1;
+padding: 20px;
+text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+
+.medic-old-logo {
+margin-bottom: 60px;
+height: 150px;
+}
+
+
+.app-details {
+margin-top:  -65px;
+margin-bottom: 60px;
+font-size: 20px;
+font-weight: bold;
+
+}
+
+.login-button {
+display: block;
+padding-left: 105px;
+padding-right: 105px;
+padding-bottom: 14px;
+padding-top: 14px;
+background-color:rgb(7, 7, 77);
+border: none;
+border-radius: 10px;
+color: white;
+font-weight: bold;
+}
+.login-button:hover {
+opacity: 0.7;
+cursor: pointer;
+}
+.login-button:active {
+opacity: 0.5;
+}
+
+
+
+.signup-button {
+display: block;
+padding-left: 100px;
+padding-right: 100px;
+padding-bottom: 12px;
+padding-top: 12px;
+background-color: white;
+border-radius: 10px;
+color: rgb(7, 7, 77);
+font-weight: bold;
+margin-top: 13px;
+border-color: rgb(7, 7, 77);
+border: solid;
+border-width: 1px;
+}
+
+.signup-button:hover {
+opacity: 0.7;
+cursor: pointer;
+}
+.signup-button:active {
+opacity: 0.5;
+}
