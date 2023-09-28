@@ -1,4 +1,5 @@
 asgiref==3.7.2
+Brotli==1.1.0
 certifi==2023.7.22
 charset-normalizer==3.2.0
 dj-database-url==2.1.0
@@ -16,5 +17,4 @@ sqlparse==0.4.4
 typing_extensions==4.8.0
 tzdata==2023.3
 urllib3==2.0.5
-
- 
+whitenoise==6.5.0
