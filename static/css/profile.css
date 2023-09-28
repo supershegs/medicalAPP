@@ -1,0 +1,261 @@
+.profile-head-page {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    background-color: #e6f9ff;
+    justify-content: space-between;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 70px;
+    align-items: center;
+  }
+  
+  .medic-old-logo {
+    height: 50px;
+    margin-left: 60px;
+    vertical-align: middle;
+  }
+  
+  .medic-logo-container {
+    height: 40px;
+    vertical-align: middle;
+    
+  }
+  
+  .remaining-header {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #008080;
+  }
+  
+  .remaining-header:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .remaining-header:active {
+    opacity: 0.5;
+  }
+  
+  .last-header {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #008080;
+    vertical-align: middle;
+    margin-right: 70px;
+  }
+  
+  .last-header:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .last-header:active {
+    opacity: 0.5;
+  }
+  
+  .prof-image {
+    height: 50px;
+    border-radius: 25px;
+    vertical-align: middle;
+    margin-left: 20px;
+  }
+
+  .profile-on-page {
+    margin-top: 120px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    background-color: #e6f9ff;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  
+  
+  .profile-pic {
+    height: 120px;
+    border-radius: 60px;
+    margin-top: 20px;
+    margin-left: 40px;
+  }
+  
+  .about-name {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 70px;
+    margin-bottom: 0;
+  
+  }
+  
+  .about-info-name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 16px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 0;
+  }
+  
+  .about-email {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 75px;
+  margin-bottom: 0;
+  }
+  
+  .about-info-email {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 6px;
+    margin-top: 0;
+  }
+  
+  .about-age {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 80px;
+    margin-bottom: 0;
+  }
+  
+  .about-info-age {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 82px;
+    margin-top: 0;
+  }
+  
+  .about-telephone {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 65px;
+    margin-bottom: 0;
+  }
+  
+  .about-info-telephone {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 36px;
+    margin-top: 0;
+  }
+  
+  .about-emergency-contact {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 35px;
+    margin-bottom: 0;
+  }
+  
+  .about-info-man {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  
+  .about-info-emergency-contact {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 39px;
+    margin-top: 0;
+  }
+  
+  .edit-button {
+    border: none;
+    padding-left: 105px;
+    padding-right: 105px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    background-color: rgb(7, 7, 77);
+    color: white;
+    border-radius: 18px;
+  }
+  
+  .edit-button:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  
+  .edit-button:active {
+    opacity: 0.7;
+  }
+  
+  .settings {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-left: 90px;
+    color: #008080;
+  }
+  
+  .settings:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  
+  .settings:active {
+    opacity: 0.5;
+  }
+  
+  .logout {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-left: 93px;
+    color: #008080;
+    margin-bottom: 15px;
+  }
+  
+  .logout:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  
+  .logout:active {
+    opacity: 0.5;
+  }
+  
+  
+  .second-page-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .emergency-call-button {
+    background-color: rgb(7, 7, 77);
+    height: 80px;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 250px;
+  }
+  
+  .emergency-call-button-text {
+    display: inline-block;
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .telephone {
+    height: 50px;
+    border-radius: 35px;
+    vertical-align: middle;
+    margin-right: 4px;
+  }
+  
+  .emergency-call-button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+  
+  .emergency-call-button:active {
+    opacity: 0.5;
+  }
+  

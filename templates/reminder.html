@@ -1,0 +1,58 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reminder Page</title>
+    <link rel="stylesheet" href="{% static 'css/reminder.css' %}">
+    {% comment %} <link rel="stylesheet" href="style/reminder-on-page.css"> {% endcomment %}
+  </head>
+  <body>
+    <div class="reminder-header">
+      <div class="medic-logo-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}">
+        </div>
+        {% if user %}
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
+        <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
+        <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+        <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a>
+      </div>
+    <div class="reminder-on-page">
+      <div class="on-page-first-column">
+        <!-- <img class="reminder-profile-pic" src="{% static 'icons/profile pic.jpg' %}" >-->
+        <img class="reminder-profile-pic" src="{{ user.avatar.url }}">
+        <p class="weclcome-profile">{{user}}</p>
+      </div>
+      <div class="on-page-second-column">
+
+        <a href="{% url 'reminder_create_reminder' %}" style="text-decoration: none"> <p class="reminder-add">&plus;Reminder</p></a>
+        <a href="{% url 'reminder_create_appointment' %}" style="text-decoration: none"> <p class="reminder-add">&plus;Appointment</p></a>
+        {% if reminders %}
+            {% for reminder in reminders %}
+              <div class="reminders">{{reminder}}<span class="times">{{reminder.time}}</span></div>
+            {% endfor %}
+        {% endif %}
+        {% comment %} <div class="reminders">Take 100 steps <span class="times">9:00am</span></div>
+        <div class="reminders">Take your aphabetic drugs <span class="times">3:00pm</span></div> {% endcomment %}
+        <div class="appointment-shedules">
+          {% if appointments %}
+            {% for appointment in appointments %}
+          <div class="appointment-date">Appointment <span class="times">{{appointment.date}}</span></div>
+          <div class="appointment-time">{{appointment}}<span class="times">{{appointment.time}}</span></div>
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+    
+  </body>
+</html>
+
+{% comment %} for appointment in appointments:
+  print(appointment)
+  print(appointment.title)  # Accessing the title attribute of the appointment
+  print(appointment.date) {% endcomment %}

@@ -1,0 +1,46 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Consultant Page</title>
+    <link rel="stylesheet" href="{% static 'css/reminder.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create_appointment.css' %}">
+    {% comment %} <link rel="stylesheet" href="style/reminder-on-page.css"> {% endcomment %}
+  </head>
+  <body>
+    <div class="reminder-header">
+      <div class="medic-logo-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}">
+        </div>
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
+        <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
+        <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+      </div>
+      <h1>Create Consultant</h1>
+    <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+        {% if form.errors %}
+          <div class="alert alert-danger">
+              <ul>
+                  {% for field, errors in form.errors.items %}
+                      {% for error in errors %}
+                          <li>{{field }}, {{error }}</li>
+                      {% endfor %}
+                  {% endfor %}
+              </ul>
+          </div>
+      {% endif %}    
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="contact_number">contact of number:</label>
+        <input type="text" id="contact_number" name="contact_number">
+        
+        <label for="area_of_specialization">Area of Specialization:</label>
+        <input type="text" id="area_of_specialization" name="area_of_specialization">  
+        <input type="file" name='avatar' id="avatar">
+        <button type="submit">Create</button>
+    </form>

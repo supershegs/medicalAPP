@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+  </head>
+  <body>
+    <div class="medic-app-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}" alt="logo.jpg">
+    </div>
+    
+    <form method='post' class="middle-section" enctype="multipart/form-data">  
+    {% csrf_token %}
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            <ul>
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{field }}, {{error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+        <input type="text" name='name' placeholder="Name">
+        <input type="text" name='email' placeholder="Email">
+        <input type='password' name='password1' placeholder='password'> 
+        <input type='password' name='password2' placeholder='re-enter password'> 
+        <input type="text" name='phone_no' placeholder="Telephone">
+        <input type="text" name='address' placeholder="Address">
+        <input type="text" name='age' placeholder="Age">
+        <input type="text" name='nationality' placeholder="Nationality">
+        <input type="text" name= 'emergency_contact_name' placeholder="Emergency contact name">
+        <input type="text" name= 'emergency_contact_no' placeholder="Emergency contact number">
+        <input type="file" name='avatar' id="imageInput"><br>
+        <img id="displayImage" src="#" alt="Image Preview" style="display: none; max-width: 100%;"><br>
+        {% comment %} <button id="cameraButton">Take a Photo</button>{% endcomment %}
+        <script type="text/javascript" src="{% static 'javascripts/script.js' %}"></script>
+        
+        <div class="signup-button-div">
+          <button type='submit' class="signup-button">Sign up</button>
+        </div>
+    </form>
+
+
+    <div class="google-signup">
+      <img class="google-logo" src="{% static 'icons/google logo.png' %}">
+      Sign up with google
+    </div>
+    <div class="fb-signup">
+      <img class="fb-logo" src="{% static 'icons/fb logo.png' %}">
+      Sign up with facebook
+    </div>
+  </body>
+</html>

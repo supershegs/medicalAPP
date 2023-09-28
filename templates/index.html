@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Medic-Old</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="oldman-photo">
+        <img src="{% static 'icons/oldman.jpg' %}" alt="Old Man">
+      </div>
+      <div class="homepage-text">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}" alt="lgoo.jpg">
+        <p class="app-details">MedicAid details about the website and what it is for</p>
+        <a href="{% url 'login' %}" class="login-button" title="login-here">Log in</a>
+        <a href="{% url 'register' %}" class="signup-button" title="sign-up here">Sign up</a>        
+      </div>
+    </div>
+  </body>
+</html>

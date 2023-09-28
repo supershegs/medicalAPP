@@ -1,0 +1,35 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-section">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}" alt="logo.jpg">
+        <!-- <img class="medic-old-logo" src="login photos/medic-old logo.jpg"> -->
+      </div>
+      <form method='post' class="right-section">
+      {% csrf_token %}
+      {% if error %}
+        {{ error }}
+      {% endif %}
+      {% if message %}
+        {{ message }}
+      {% endif %}
+        <input class="email-input" type="email" name='email' placeholder="Email" title="input your-email">
+        <input class="password-input" type="password" name='password' placeholder="Password" title="input your-password">
+        <button class="login-button" title="login-button">Login</button>
+      </form>
+      <div class="right-section">
+        <div class="forgot-password">Forgot password?</div>
+        <div class="google-login"><img class="google-logo" src="{% static 'icons/google logo.png' %}">Login with google</div>
+        <div class="fb-login"><img class="fb-logo" src="{% static 'icons/fb logo.png' %}">Login with facebook</div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

@@ -1,0 +1,51 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard Page</title>
+    <link rel="stylesheet" href="{% static 'css/dashbord.css' %}">
+  </head>
+  <body>
+    <div class="dashboard-header">
+      <div class="medic-logo-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}">
+      </div>
+      {% if user %}
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
+        <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
+        <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+        <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a>
+    </div>
+    <div class="welcome-healthy">
+      <div class="welcome-james">Welcome back, {{user}}&#128075;</div>
+      <div class="healthy-container"><img src="{% static 'icons/Dashboard(Healthy).jpg' %}"></div>
+    </div>
+    <div class="on-page">
+      <div class="first-row">
+        <div class="bp-ht">
+        {% static 'icons/Dashboard(September).jpg'%}
+          <div class="blood-pressure"><img src="{% static 'icons/Dashboard(Blood pressure).jpg' %}"></div>
+          <div class="heart-rate"><img src="{% static 'icons/Dashboard(Heart rate).jpg'%}"></div>
+        </div>
+        <div class="calender"><img src="{% static 'icons/Dashboard(calender).png'%}"></div>
+        <div class="doctors-and-remindeers">
+          <div class="doctors"><img src=" {% static 'icons/Dashboard(Doctors online).jpg'%}"></div>
+          <div class="reminders"><img src="{% static 'icons/Dashboard(Reminders).png'%}"></div>
+        </div>
+      </div>
+      <div class="second-row">
+        <div><img src=" {% static 'icons/Dashboard(Button-Emergncy contact).jpg'%}"></div>
+        <div><img src="{% static 'icons/Dashboard(Details).jpg'%}"></div>
+      </div>
+      <div class="third-row">
+        <div><p class="rv-label">Recommended videos</p><img class="r-videos" src="{% static 'icons/Dashboard(Recommended videos).jpg'%}"></div>
+        <div><img class="sept" src="{% static 'icons/Dashboard(September).jpg'%}"></div>
+      </div>
+    </div>
+    {% endif %}
+    <div class="back-to-top">Back to top &#8593;</div>
+  </body>
+</html>

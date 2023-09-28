@@ -1,0 +1,61 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Health-Informarion Page</title>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    {% comment %} <link rel="stylesheet" href="style/medical-record-on-page.css"> {% endcomment %}
+  </head>
+  <body>
+    <div class="medical-record-header">
+      <div class="medic-logo-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}">
+      </div>
+      {% if user %}
+      <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
+      <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
+      <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
+      <a href="{% url 'dashboard' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+      <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
+      <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+      <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a>
+    </div>
+    <div class="profile-on-page">
+      <div class="first-page-column">
+        <div class="profile-and-medical-description">
+          <div class="profile-and-name">
+            <div><img class="profile-pic" src="{{ user.avatar.url }}"></div>
+            <p class="name">Mr. {{user}}</p>
+          </div>
+          <div class="medical-description">
+            <p class="age">Age&colon; {{user.age}}</p>
+            <hr class="line line1">
+            <p class="description-headings">Health condition &colon;</p>
+            <p class="description">Diabetic and asthmatic since 2017</p>
+            <hr class="line line2">
+            <p class="description-headings">Drugs prescribed &colon;</p>
+            <p class="description">Alphabetic &amp; Ventolin</p>
+            <hr class="line line3">
+            <p class="description-headings">Complains &colon;</p>
+            <p class="complains-one">1. Back pain, sharp pain in the knees</p>
+            <p class="complains-two">2. Can't see properly with the left eye</p>
+            <p class="complains-three">3. Feeling nauseous after taking Alphabetic</p>
+            <p class="complains-four">4. Stomach ache after eating oily food</p>
+            <hr class="line line4">
+            <p class="description-headings">Consultant &colon;</p>
+            <p class="description">Not yet assigned</p>
+            <hr class="line line5">
+            <p class="description-headings">Call consultant</p>
+            <p class="description">audio call / video call</p>
+          </div>
+        </div>
+      </div>
+      <div class="second-page-column">
+        <p class="add-record">Add medical record</p>
+        <button class="uplodad-button">Upload file</button>
+        <p class="upload-format">PDF files only</p>
+      </div>
+      {% endif%}
+    </div>
+  </body>
+</html>

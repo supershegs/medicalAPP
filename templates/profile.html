@@ -1,0 +1,57 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile Page</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'css/header.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+  </head>
+  <body>
+    <div class="profile-head-page">
+      <div class="medic-logo-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}" >
+      </div>
+      <div class="remaining-header">Dashboard</div>
+      <div class="remaining-header">Reminder</div>
+      <div class="remaining-header">Health Information</div>
+      <div class="remaining-header">Activity Tracking</div>
+      <div class="remaining-header">Book Consultation</div>
+      <div class="remaining-header">About</div>
+      <div class="last-header">Logout<img class="prof-image" src="{% static 'icons/profile pic.jpg' %}"></div>
+    </div>
+    <div class="profile-on-page">
+      <div class="first-page-column">
+        <div><img class="profile-pic" src="{% static 'icons/profile pic.jpg' %}" title="profile photo"></div>
+        <p>
+          <p class="about-name">Name</p>
+          <p class="about-info-name">Mr James Medicold</p>
+        </p>
+        <p>
+          <p class="about-email">Email</p>
+          <p class="about-info-email">James&commat;medicold.com</p>
+        </p>
+        <p>
+          <p class="about-age">Age</p>
+          <p class="about-info-age">63</p>
+        </p>
+        <p>
+          <p class="about-telephone">Telephone</p>
+          <p class="about-info-telephone">081-6343-8383</p>
+        </p>
+        <p>
+          <p class="about-emergency-contact">Emergency contact</p>
+          <p class="about-info-man">Kelvin Medicold</p>
+          <p class="about-info-emergency-contact">081-6343-8383</p>
+        </p>
+        <button class="edit-button">Edit</button>
+        <div class="settings">Settings</div>
+        <div class="logout">Logout</div>
+      </div>
+      <div class="second-page-column">
+        <button class="emergency-call-button">
+          <img class="telephone" src="{% static 'icons/telephon pic.jfif' %}"><p class="emergency-call-button-text">Click to call emergency contact</p>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

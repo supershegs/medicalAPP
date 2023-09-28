@@ -1,0 +1,145 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+   
+  }
+  
+  
+  
+  .left-section {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  .medic-old-logo {
+    height: 200px;
+    border-radius: 75px;
+  
+  }
+  
+  .right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+  }
+  
+  .email-input {
+    padding: 20px;
+    width:100%;
+    max-width: 315px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    
+  }
+  .password-input {
+    padding: 20px;
+    width:100%;
+    max-width: 315px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    
+  }
+  
+  .login-button {
+    background-color: rgb(7, 7, 77);
+    padding-left: 160px;
+    padding-right: 160px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .login-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+  
+  .login-button:active {
+    opacity: 0.5;
+  }
+  
+  .forgot-password {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(204, 0, 0);
+    font-weight: bold;
+    font-size: 19px;
+    margin-top: 20px;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .forgot-password:active {
+    opacity: 0.5;
+  }
+  
+  .google-login {
+    color: rgb(60, 133, 244);
+    font-size: 18x;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-left: -19px;
+  }
+  
+  .google-login:hover {
+    text-decoration: underline;
+  }
+  
+  .google-login:active {
+    opacity: 0.5;
+  }
+  
+  .google-logo {
+    height: 20px;
+    vertical-align: middle;
+    border-radius: 10px;
+    margin-right: 10px;
+  }
+  
+  .fb-login {
+    color: rgb(60, 133, 244);
+    font-size: 18x;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    margin-top: 6px;
+    margin-left: -5px;
+  }
+  
+  .fb-login:hover {
+    text-decoration: underline;
+  }
+  
+  .fb-login:active {
+    opacity: 0.5;
+  }
+  
+  .fb-logo {
+    height: 18px;
+    vertical-align: middle;
+    border-radius: 9px;
+    margin-right: 10px
+  }
+  
