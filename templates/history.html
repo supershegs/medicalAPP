@@ -2,8 +2,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Health-Informarion Page</title>
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     {% comment %} <link rel="stylesheet" href="style/medical-record-on-page.css"> {% endcomment %}
@@ -34,7 +32,7 @@
             {% if health_info_list == '' %}
                 <a href="{% url 'health_information_creation' %}" style="text-decoration: none">&plus; Add your health Information</a>
             {% else %}
-                <a href="{% url 'health_information_update' pk= health_info.pk %}">&plus; Modify your health Information<</a>
+                <a href="{% url 'health_information_update' pk=1%}">&plus; Modify your health Information</a>
             {% endif %}
             <p class="age">Age&colon; {{user.age}}</p>
 

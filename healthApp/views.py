@@ -95,8 +95,57 @@ class LoginView(APIView):
 class dashboardView(View):
     def get(self, request):
         if request.user.is_authenticated:
-            return render(request, 'dashboard.html')
+            appointments = Appointment.objects.filter(user=request.user)
+            reminders = Reminder.objects.filter(user=request.user)
+            health_info_list = HealthInformation.objects.filter(user=request.user)
+
+            search_url = 'https://www.googleapis.com/youtube/v3/search'
+            vides_ids = []
+            video_url = 'https://www.googleapis.com/youtube/v3/videos'
+            videos_list = []
+            search_params = {
+                'part': 'snippet',
+                'q': 'how to improve your health and lifestyle',
+                'key': settings.YOUTUBE_DATA_API_KEY,
+                'maxResults': 3,
+                'type': 'video'
+            }
+            res = requests.get(search_url, params=search_params)
+            # print(res.json()) res.json()['items']['id']['videoId']
+            results = res.json()['items']
+            # print(results)
+            for result in results:
+                # print(result['id']['videoId']) to pick the video ID
+                vides_ids.append(result['id']['videoId'])
+
+            video_params = {
+                'part': 'snippet, contentDetails',
+                'key': settings.YOUTUBE_DATA_API_KEY,
+                'id': ','.join(vides_ids)
+            }
+            res = requests.get(video_url, params=video_params)
+            results = res.json()['items']
+            for result in results:
+                video_data = {
+                    'title': result['snippet']['title'],
+                    'id': result['id'],
+                    'url': f'https://www.youtube.com/watch?v={ result["id"] }',
+                    'duration': parse_duration(result['contentDetails']['duration']),
+                    'thumbnail': result['snippet']['thumbnails']['high']['url']
+
+                }
+                videos_list.append(video_data)
+            videos = {
+                'videos': videos_list
+            }
+
+            return render(request, 'dashboard.html', 
+                          {'appointments': appointments,
+                           'reminders': reminders,
+                           'health_info_list': health_info_list
+                           })
         return redirect('index')
+
 
 
 class profileView(View):
@@ -237,7 +286,7 @@ class HealthInformationUpdate(View):
         return render(request,'health_information_update.html',  
                       {'form': form,
                 'health_info': health_info,
-                'consultants': consultants} )
+                'consultants': consultants, **videos} )
 
 
 
@@ -263,8 +312,7 @@ class activityView(View):
             
             reminders = Reminder.objects.filter(user=request.user)
             reminder = Reminder.objects.filter(user=request.user).first()
-            print('testing', reminders)
-            print('test', reminder)
+        
             search_url = 'https://www.googleapis.com/youtube/v3/search'
             vides_ids = []
             video_url = 'https://www.googleapis.com/youtube/v3/videos'
@@ -277,13 +325,9 @@ class activityView(View):
                 'type': 'video'
             }
             res = requests.get(search_url, params=search_params)
-            # print(res.json()) res.json()['items']['id']['videoId']
             results = res.json()['items']
-            # print(results)
             for result in results:
-                # print(result['id']['videoId']) to pick the video ID
                 vides_ids.append(result['id']['videoId'])
-
             video_params = {
                 'part': 'snippet, contentDetails',
                 'key': settings.YOUTUBE_DATA_API_KEY,

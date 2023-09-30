@@ -2,8 +2,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Dashboard Page</title>
     <link rel="stylesheet" href="{% static 'css/dashbord.css' %}">
   </head>
@@ -23,10 +21,12 @@
     </div>
     <div class="welcome-healthy">
       <div class="welcome-james">Welcome, {{user}}&#128075;</div>
-    </div>
+    </div>      
     <div class="dashboard-on-page">
       <div class="first-row">
         <div class="blood-pressure">
+        
+          {% for health_info in health_info_list %}
           <div class="bp-in">
             <p class="bp-text">Blood pressure</p>
             <div class="linesd">
@@ -36,14 +36,14 @@
               <div class="line4"></div>
               <div class="line5"></div>
             </div>
-           <div class="bp-value">110/67 mmHg</div>
+           <div class="bp-value">{{health_info.blood_pressure}} mmHg</div>
           </div>
           
         </div>
         <div class="heart-rate">
           <p class="hr-text">Heart-rate</p>
           <img class="hr-image" src="{% static 'icons/Dashboard(heart rate).jpg' %}">
-          <div class="hr-value">57-61</div>
+          <div class="hr-value"></div>
 
         </div>
         <button class="calendar">
@@ -116,22 +116,25 @@
             <p class="doc-text">Doctors online</p>
             <hr class="lines">
             <div class="doctor-images">
-              <img class="doc-1" src= '#'> <!-- src="{% static 'icons/Dashboard(doc1).jpg' %}"> -->
-              <img class="doc-2" src= '#'> <!-- rc="{% static 'icons/Dashboard(doc2).jpg' %}"> -->
-              <img class="doc-3" src= '#>  <!-- src="{% static 'icons/Dashboard(doc3).jpg' %}"> -->
+              <img class="doc-1" src="{% static 'icons/Dashboard(doc1).jpg' %}"> <!-- src="{% static 'icons/Dashboard(doc1).jpg' %}"> -->
+              <img class="doc-2" src="{% static 'icons/Dashboard(doc3).jpg' %}"> <!-- rc="{% static 'icons/Dashboard(doc2).jpg' %}"> -->
+              <img class="doc-3" src="{% static 'icons/Dashboard(doc3).jpg' %}">  <!-- src="{% static 'icons/Dashboard(doc3).jpg' %}"> -->
               <button class="doc-button">&plus;3</button>
             </div>
           </div>
           <div class="reminders">
+            {% if reminders %}
             <p class="rem">Reminders</p>
-            <hr class="lines">
-            <p class="rem-text">Take medication at 6:30pm Dentist appointment</p>
+            {% for reminder in reminders %}
+              <p class="rem-text">{{reminder.description}}</p>
+            {% endfor %}    
+            {% endif %}
           </div>
         </div>
      </div>
      <div class="second-row">
       <button class="emergency-call-button">
-        <img class="telephone" src="dashboard photos/telephon pic.jfif"><p class="emergency-call-button-text">Click to call emergency contact</p>
+        <img class="telephone" src="{% static 'icons/telephon pic.jfif' %}"><p class="emergency-call-button-text">Click to call emergency contact</p>
       </button>
       <div class="details-table">
         <p class="d-text">Details</p>
@@ -146,25 +149,26 @@
           </thead>
           <tbody>
             <tr>
-              <td>A&plus;</td>
-              <td>176cm</td>
-              <td>70kg</td>
+              <td>{{health_info.blood_group}}</td>
+              <td>{{health_info.height}}cm</td>
+              <td>{{health_info.body_weight}}kg</td>
             </tr>
           </tbody>
         </table>
       </div>
      </div>
+     {%endfor%}
      <div class="third-row">
       <div class="first-two">
         <div class="divide">
           <div class="writings">Recommended videos</div>
           <div class="vids">
-            <div class="coloured">
-              <img class="recommended-vid" src="dashboard photos/Dashboard(Recommended vid).png">
+            {% comment %} <div class="coloured">
+              <img class="recommended-vid" src="{% static 'icons/Dashboard(Recommended videos).jpg' %}">
               <p class="writing">Eating good foods and staying healthy</p>
-            </div>
+            </div> {% endcomment %}
             <div class="non-coloured">
-              <img class="recommended-vid" src="dashboard photos/Dashboard(Recommended video).png">
+              <a href = "{{ video.url }}"><img class="recommended-vid" src="{% static 'icons/Dashboard(Recommended videos).jpg' %}"></a>
               <p class="writing">How to protect your skin in the outdoors</p>
         </div>
        
