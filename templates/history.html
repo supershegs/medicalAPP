@@ -34,7 +34,7 @@
             {% if health_info_list == '' %}
                 <a href="{% url 'health_information_creation' %}" style="text-decoration: none">&plus; Add your health Information</a>
             {% else %}
-                <a href="{% url 'health_information_update' pk=user_health_info.pk %}">&plus; Modify your health Information<</a>
+                <a href="{% url 'health_information_update' pk= health_info.pk %}">&plus; Modify your health Information<</a>
             {% endif %}
             <p class="age">Age&colon; {{user.age}}</p>
 

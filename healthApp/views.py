@@ -213,7 +213,6 @@ class HealthInformationUpdate(View):
     def get(self, request, pk):
         if request.user.is_authenticated:
             health_info = HealthInformation.objects.get(pk=pk)
-            user_health_info = HealthInformation.objects.get(user=request.user)
             print(health_info)
             if health_info.user == request.user:
                 form = HealthInformationForm(instance=health_info)
