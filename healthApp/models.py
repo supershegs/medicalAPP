@@ -105,7 +105,9 @@ class HealthInformation(models.Model):
     existing_conditions = models.TextField()
     blood_group = models.CharField(max_length=5)
     blood_pressure = models.CharField(max_length=15)
+    avatar = models.ImageField(upload_to='medical_record_pic/', null=True,
+        blank=True)
     
 
     def __str__(self):
-        return f"Health Information for {self.consultant.name}"
+        return f"Health Information for {self.user.name}"

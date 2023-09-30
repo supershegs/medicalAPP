@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Medic-Old</title>
     
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
@@ -14,8 +16,8 @@
       <div class="homepage-text">
         <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}" alt="lgoo.jpg">
         <p class="app-details">MedicAid details about the website and what it is for</p>
-        <a href="{% url 'login' %}" class="login-button" title="login-here">Log in</a>
-        <a href="{% url 'register' %}" class="signup-button" title="sign-up here">Sign up</a>        
+        <a href="{% url 'login' %}" style="text-decoration: none" class="login-button" title="login-here">Log in</a>
+        <a href="{% url 'register' %}" style="text-decoration: none" class="signup-button" title="sign-up here">Sign up</a>        
       </div>
     </div>
   </body>

@@ -1,0 +1,72 @@
+{%load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Search YouTube</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/dashbord.css' %}">
+  </head>
+  <body>
+    <div class="dashboard-header">
+      <div class="medic-logo-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}">
+      </div>
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
+        <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
+        <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
+        <a href="{% url 'activitiesTracker' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
+        <a href="{% url 'about' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+        <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a>
+    </div>
+    
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'css/video.css' %}">
+  </head>
+  <body>
+
+<main role="main">
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">recommended Video</h1>
+      <p class="lead text-muted">Our top 9 recommended videos</p>
+      <form method = 'POST'>
+      <div class="input-group mb-3">
+            {% csrf_token %}
+            <input type="text"  name='search' class="form-control" aria-label="Username">
+      </div>
+      <p>
+        <button type='submit' class="btn btn-primary my-2">Search</button>
+        {% comment %} <button type='submit' name='lucky' class="btn btn-secondary my-2">I'm Feeling Lucky</button> {% endcomment %}
+      </p>
+      </form>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+      {% for video in videos %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="bd-placeholder-img card-img-top" width="100%" height="225" src="{{ video.thumbnail }}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"></img>
+            <div class="card-body">
+              <p class="card-text">{{video.title}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href = "{{ video.url }}" type="button" class="btn btn-sm btn-outline-secondary">watch video</a>
+                </div>
+                <small class="text-muted">{{video.duration}}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+</main>
+</body>
+</html>

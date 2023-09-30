@@ -1,0 +1,59 @@
+{%load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Activities Page</title>
+    <link rel="stylesheet" href="{% static 'css/activities.css' %}">
+    <link rel="stylesheet" href="style/activites-header.css">
+    <link rel="stylesheet" href="activities.css">
+  </head>
+  <body>
+    <div class="activities-header">
+      <div class="medic-logo-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}">
+      </div>
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
+        <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
+        <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
+        <a href="{% url 'activitiesTracker' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'activitiesTracker' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
+        <a href="{% url 'about' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+        <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a>
+    </div>
+    <div class="activities-on-page">
+      <div class="first-row">
+        {% if reminders %}
+            {% for reminder in reminders %}
+              <div><img class="breathing-pic" src="{% static 'icons/Activity(breathe).jpg' %}"><p class="first-p">{{reminder}}</p><p class="second-p">{{reminder.description}}</p></div>
+            {%endfor%}
+        {%endif%}
+        {% comment %} <div><img class="breathing-pic" src="{% static 'icons/Activity(breathe).jpg' %}"><p class="first-p">Take 15 deep breathe</p><p class="second-p">Relax your mind and experience calmness in this breathing exercise</p></div>
+        <div><img class="walking-photo" src="{% static 'icons/Activity(taking steps).jfif' %}"><p class="first-p">Take 100 steps</p><p class="second-p">Take a walk, flex those muscles</p></div> {% endcomment %}
+      </div>
+      <div class="second-row">
+        <p class="text">Watch videos that will improve your health and lifestyle</p>
+        <div class="images-row">
+          {% for video in videos %}
+          <div><a href = "{{ video.url }}"><img class="images" src="{{ video.thumbnail }}"></a></div>
+          {% comment %} <div><img class="images" src="{% static 'icons/Activities(video.).jfif' %}"></div>
+          <div><img class="images" src="{% static 'icons/Activities(videoo).jfif' %}"></div> {% endcomment %}
+          {%endfor%}
+        </div>
+        <div class="button-container"><a href="{% url 'recommended_video' %}" style="text-decoration: none" class="Search-videos-button">Search more videos</a></div>
+      </div>
+      <div class="third-row">
+        <div class="connect-text">Connect with others on MedicOld</div>
+        <div class="the-logos">
+          <img class="logos" src="{% static 'icons/Activities(fb logo).png' %}">
+          <img class="logos" src="{% static 'icons/Activities(twitter logo).png' %}">
+          <img class="logos" src="{% static 'icons/Activities(instagram logo).png' %}">
+          <img class="logos" src="{% static 'icons/Activities(tiktok logo).png' %}">
+        </div>
+      </div>
+      
+    </div>
+    
+  </body>
+</html>

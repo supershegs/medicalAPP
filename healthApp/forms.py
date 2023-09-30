@@ -42,4 +42,4 @@ class ConsultantForm(forms.ModelForm):
 class HealthInformationForm(forms.ModelForm):
     class Meta:
         model = HealthInformation
-        fields = ['health_condition', 'drugs_prescribed', 'complaints','consultant','call_consultant', 'height','body_weight','heart_rate','existing_conditions','blood_group', 'blood_pressure']
+        fields = ['health_condition', 'drugs_prescribed', 'complaints','consultant','call_consultant', 'height','body_weight','heart_rate','existing_conditions','blood_group', 'blood_pressure','avatar']

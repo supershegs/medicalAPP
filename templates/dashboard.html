@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Dashboard Page</title>
     <link rel="stylesheet" href="{% static 'css/dashbord.css' %}">
   </head>
@@ -14,37 +16,204 @@
         <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
         <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
         <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
-        <a href="{% url 'dashboard' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
-        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
-        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+        <a href="{% url 'activitiesTracker' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'activitiesTracker' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
+        <a href="{% url 'about' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
         <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a>
     </div>
     <div class="welcome-healthy">
-      <div class="welcome-james">Welcome back, {{user}}&#128075;</div>
-      <div class="healthy-container"><img src="{% static 'icons/Dashboard(Healthy).jpg' %}"></div>
+      <div class="welcome-james">Welcome, {{user}}&#128075;</div>
     </div>
-    <div class="on-page">
+    <div class="dashboard-on-page">
       <div class="first-row">
-        <div class="bp-ht">
-          <div class="blood-pressure"><img src="{% static 'icons/Dashboard(Blood pressure).jpg' %}"></div>
-          <div class="heart-rate"><img src="{% static 'icons/Dashboard(Heart rate).jpg'%}"></div>
+        <div class="blood-pressure">
+          <div class="bp-in">
+            <p class="bp-text">Blood pressure</p>
+            <div class="linesd">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+              <div class="line4"></div>
+              <div class="line5"></div>
+            </div>
+           <div class="bp-value">110/67 mmHg</div>
+          </div>
+          
         </div>
-        <div class="calender"><img src="{% static 'icons/Dashboard(calender).png'%}"></div>
-        <div class="doctors-and-remindeers">
-          <div class="doctors"><img src=" {% static 'icons/Dashboard(Doctors online).jpg'%}"></div>
-          <div class="reminders"><img src="{% static 'icons/Dashboard(Reminders).png'%}"></div>
+        <div class="heart-rate">
+          <p class="hr-text">Heart-rate</p>
+          <img class="hr-image" src="{% static 'icons/Dashboard(heart rate).jpg' %}">
+          <div class="hr-value">57-61</div>
+
+        </div>
+        <button class="calendar">
+          <table class="cal-table">
+            <thead>
+              <tr>
+                <th class="calendar-heading" colspan="50">September 2023</th>
+              </tr>
+              <tr>
+                <th>Su</th>
+                <th>Mo</th>
+                <th>Tu</th>
+                <th>We</th>
+                <th>Th</th>
+                <th>Fr</th>
+                <th>Sa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>14</td>
+                <td>15</td>
+                <td>16</td>
+              </tr>
+              <tr>
+                <td>17</td>
+                <td>18</td>
+                <td>19</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td>24</td>
+                <td>25</td>
+                <td>26</td>
+                <td>27</td>
+                <td>28</td>
+                <td>29</td>
+                <td>30</td>
+              </tr>
+            </tbody>
+          </table>
+        </button>
+        <div class="doctors-reminders">
+          <div class="doctors">
+            <p class="doc-text">Doctors online</p>
+            <hr class="lines">
+            <div class="doctor-images">
+              <img class="doc-1" src= '#'> <!-- src="{% static 'icons/Dashboard(doc1).jpg' %}"> -->
+              <img class="doc-2" src= '#'> <!-- rc="{% static 'icons/Dashboard(doc2).jpg' %}"> -->
+              <img class="doc-3" src= '#>  <!-- src="{% static 'icons/Dashboard(doc3).jpg' %}"> -->
+              <button class="doc-button">&plus;3</button>
+            </div>
+          </div>
+          <div class="reminders">
+            <p class="rem">Reminders</p>
+            <hr class="lines">
+            <p class="rem-text">Take medication at 6:30pm Dentist appointment</p>
+          </div>
+        </div>
+     </div>
+     <div class="second-row">
+      <button class="emergency-call-button">
+        <img class="telephone" src="dashboard photos/telephon pic.jfif"><p class="emergency-call-button-text">Click to call emergency contact</p>
+      </button>
+      <div class="details-table">
+        <p class="d-text">Details</p>
+        <hr class="lines">
+        <table class="d-info">
+          <thead>
+            <tr>
+              <th>Blood Group</th>
+              <th>Height</th>
+              <th>Body Weight</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>A&plus;</td>
+              <td>176cm</td>
+              <td>70kg</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+     </div>
+     <div class="third-row">
+      <div class="first-two">
+        <div class="divide">
+          <div class="writings">Recommended videos</div>
+          <div class="vids">
+            <div class="coloured">
+              <img class="recommended-vid" src="dashboard photos/Dashboard(Recommended vid).png">
+              <p class="writing">Eating good foods and staying healthy</p>
+            </div>
+            <div class="non-coloured">
+              <img class="recommended-vid" src="dashboard photos/Dashboard(Recommended video).png">
+              <p class="writing">How to protect your skin in the outdoors</p>
+        </div>
+       
+        </div>
+        
         </div>
       </div>
-      <div class="second-row">
-        <div><img src=" {% static 'icons/Dashboard(Button-Emergncy contact).jpg'%}"></div>
-        <div><img src="{% static 'icons/Dashboard(Details).jpg'%}"></div>
+      <div class="last-bar">
+        <p class="bar-label">September 20, 2023</p>
+        <div>
+          <div class="bar-chart">
+            <div class="bar" style="left: 20px;"></div>
+            <div class="label" style="left: 20px;">9 am</div>
+            <div class="day-label" style="left: 0;">
+                <div style="margin-bottom: 20px;">Saturday</div>
+                <div style="margin-bottom: 20px;">Friday</div>
+                <div style="margin-bottom: 20px;">Thursday</div>
+                <div style="margin-bottom: 20px;">Wednesday</div>
+                <div style="margin-bottom: 20px;">Tuesday</div>
+                <div style="margin-bottom: 20px;">Monday</div>
+                <div>Sunday</div>
+            </div>
+            
+            <div class="bar" style="left: 100px;"></div>
+            <div class="label" style="left: 100px;">10 am</div>
+            
+            <div class="bar" style="left: 180px;"></div>
+            <div class="label" style="left: 180px;">11 am</div>
+            
+            <div class="bar" style="left: 260px;"></div>
+            <div class="label" style="left: 260px;">12 pm</div>
+            
+            <div class="bar" style="left: 340px;"></div>
+            <div class="label" style="left: 340px;">1 pm</div>
+            
+            <div class="bar" style="left: 420px;"></div>
+            <div class="label" style="left: 420px;">2 pm</div>
+            
+            <!-- Medication div -->
+            <div class="medication">Take your meds at 12 pm</div>
+            
+            <!-- Dentist div -->
+            <div class="dentist">Dentist 12 pm - 3 pm</div>
+        </div>
       </div>
-      <div class="third-row">
-        <div><p class="rv-label">Recommended videos</p><img class="r-videos" src="{% static 'icons/Dashboard(Recommended videos).jpg'%}"></div>
-        <div><img class="sept" src="{% static 'icons/Dashboard(September).jpg'%}"></div>
-      </div>
+     </div>
+    {% endif%}
     </div>
-    {% endif %}
+    
     <div class="back-to-top">Back to top &#8593;</div>
   </body>
 </html>

@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Health-Informarion Page</title>
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     {% comment %} <link rel="stylesheet" href="style/medical-record-on-page.css"> {% endcomment %}
@@ -15,9 +17,9 @@
       <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
       <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
       <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
-      <a href="{% url 'dashboard' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+      <a href="{% url 'activitiesTracker' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
       <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
-      <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+      <a href="{% url 'about' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
       <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a>
     </div>
     <div class="profile-on-page">
@@ -28,7 +30,14 @@
             <p class="name">Mr. {{user}}</p>
           </div>
           <div class="medical-description">
+            
+            {% if health_info_list == '' %}
+                <a href="{% url 'health_information_creation' %}" style="text-decoration: none">&plus; Add your health Information</a>
+            {% else %}
+                <a href="{% url 'health_information_update' pk=user_health_info.pk %}">&plus; Modify your health Information<</a>
+            {% endif %}
             <p class="age">Age&colon; {{user.age}}</p>
+
             {% for health_info in health_info_list %}
             <hr class="line line1">
             <p class="description-headings">Health condition &colon;</p>
@@ -50,7 +59,8 @@
       </div>
       <div class="second-page-column">
         <a href="{% url 'health_information_creation' %}"style="text-decoration: none"><p class="add-record">Add medical record</p></a>
-        <button class="uplodad-button">Upload file</button>
+        {% comment %} <input type="file" name='avatar'><br> {% endcomment %}
+        <button name='avatar' class="uplodad-button">Upload file</button>
         <p class="upload-format">PDF files only</p>
         {% endfor %}
         {% endif %}

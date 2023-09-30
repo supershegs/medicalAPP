@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>consultant Page</title>
     <link rel="stylesheet" href="{% static 'css/reminder.css' %}">
     <link rel="stylesheet" href="{% static 'css/create_appointment.css' %}">
@@ -15,9 +17,9 @@
         <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
         <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
         <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
-        <a href="{% url 'dashboard' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'activitiesTracker' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
         <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
-        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+        <a href="{% url 'about' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
         {% comment %} <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a> {% endcomment %}
       </div>
     <h2>Consultants List</h2>
@@ -25,4 +27,5 @@
         {% for consultant in consultants %}
         <li><img class="prof-image" src="{{ consultant.avatar.url }}"> {{ consultant.name }} - {{ consultant.area_of_specialization }}</li>
         {% endfor %}
+        <a href="{% url 'consultant_create' %}" style="text-decoration: none"> <p> Return to create consultant</p></a>
     </ul>

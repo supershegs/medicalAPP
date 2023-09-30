@@ -1,0 +1,41 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>About Page</title>
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+  </head>
+  <body>
+    <div class="about-header">
+      <div class="medic-logo-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}">
+      </div>
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
+        <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
+        <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
+        <a href="{% url 'activitiesTracker' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
+        <a href="{% url 'about' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>  
+    </div>
+    <div class="on-page">
+      <img src="{% static 'icons/about(main-page).jpg' %}">
+      <div class="texts-on-page">
+        <div class="first-column">
+          <p class="topics">Who we are</p>
+          <p class="description">We are a passionate and devoted team of healthcare professionals, driven by a strong commitment to imoroving the overall well-being of seniors in our community and beyond</p>
+        </div>
+        <div class="second-column">
+          <p class="topics">Our Mission</p>
+          <p class="description">We aim to enhance the well-being of seniors in our community, enabling them to enjoy a longer and healthier life</p>
+        </div>
+        <div class="third-column">
+          <p class="topics">Our Vision</p>
+          <p class="description">We aim to cultivate a larger community of seniors who are highly committed and actively engaged in maintaining teir overall well-being while ensuring that healthcare remains easily accessible to them</p>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

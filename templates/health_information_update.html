@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Dashboard Page</title>
     <link rel="stylesheet" href="{% static 'css/dashbord.css' %}">
     <link rel="stylesheet" href="{%static 'css/health_information.css' %}">
@@ -15,13 +17,13 @@
         <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
         <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
         <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
-        <a href="{% url 'dashboard' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'activitiesTracker' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
         <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
-        <a href="{% url 'dashboard' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+        <a href="{% url 'about' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
         <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a>
     </div>
     <h2>Health Information List</h2>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     
     <div class="form-group">
@@ -67,6 +69,19 @@
     <div class="form-group">
       <label for="existing_conditions">Existing Conditions:</label>
       <textarea name="existing_conditions" id="existing_conditions">{{ form.existing_conditions.value }}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="blood_group">blood_group:</label>
+      <input type="text" name="blood_group" id="blood_group" value="{{ form.blood_group.value }}">
+    </div>
+
+    <div class="form-group">
+      <label for="blood_pressure">blood pressure :</label>
+      <input type="text" name="blood_pressure" id="blood_pressure" value="{{ form.blood_pressure.value }}">
+    </div>
+    <div class="form-group">
+      <label for="avatar">Upload your nedical record file: if any?</label>
+      <input type="file" name="avatar" id="avatar" value="{{ form.avatar.value }}">
     </div>
     {% endif %}
     <button type="submit">Update</button>

@@ -1,0 +1,16 @@
+{
+    "web":{
+        "client_id":"949874939602-925db4j80rqhi4e9dh9eiiia1925l1fv.apps.googleusercontent.com",
+        "project_id":"event-auth-399521",
+        "private_key_id": "your-private-key-id",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nYourPrivateKey\n-----END PRIVATE KEY-----\n",
+        "client_email": "segsamos@gmail.com",
+        "auth_uri":"https://accounts.google.com/o/oauth2/auth",
+        "token_uri":"https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url":"https://www.googleapis.com/oauth2/v1/certs",
+        "client_secret":"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",
+        "redirect_uris":["http://127.0.0.1:8000/callback","http://localhost:8000/callback"],
+        "javascript_origins":["http://127.0.0.1:8000","http://localhost:8000"]
+    }
+
+}

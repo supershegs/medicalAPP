@@ -19,9 +19,12 @@ urlpatterns = [
     path('consultant/create', consultantView.as_view(), name='consultant_create'),
     path('health_information', HealthInformationView.as_view(), name='health_information'),
     path('health_information_creation', HealthInformationCreate.as_view(), name='health_information_creation'),
-    path('health_information_update', HealthInformationUpdate.as_view(),name='health_information_update'),
+    path('health_information_update/<int:pk>/', HealthInformationUpdate.as_view(),name='health_information_update'),
     # path('consultants/add/', views.add_health_information, name='add_health_information'),
-    path('logout', logoutView.as_view(), name='logout')
+    path('activitiesTracker', activityView.as_view(), name='activitiesTracker'),
+    path('logout', logoutView.as_view(), name='logout'),
+    path('video', VideoView.as_view(), name='recommended_video'),
+    path('about', AboutView.as_view(), name= 'about')
     # path('user', Userview.as_view())
 ]
 

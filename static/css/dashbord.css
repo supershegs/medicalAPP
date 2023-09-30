@@ -1,181 +1,579 @@
 .dashboard-header {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    background-color: #e6f9ff;
-    justify-content: space-between;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 70px;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  background-color: #e6f9ff;
+  justify-content: space-between;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 70px;
+  align-items: center;
+}
+
+.medic-old-logo {
+  height: 50px;
+  margin-left: 60px;
+  vertical-align: middle;
+}
+
+.medic-logo-container {
+  height: 40px;
+  vertical-align: middle;
   
-  .medic-old-logo {
-    height: 50px;
-    margin-left: 60px;
-    vertical-align: middle;
-  }
-  
-  .medic-logo-container {
-    height: 40px;
-    vertical-align: middle;
-    
-  }
-  
-  .remaining-header {
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #008080;
-    
-    
-  }
-  
-  .remaining-header:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
-  .remaining-header:active {
-    opacity: 0.5;
-  }
+}
+
+.remaining-header {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #008080;
   
   
+}
+
+.remaining-header:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.remaining-header:active {
+  opacity: 0.5;
+}
+
+
+
+.last-header {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #008080;
+  vertical-align: middle;
+  margin-right: 70px;
+}
+
+.last-header:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.last-header:active {
+  opacity: 0.5;
+}
+
+.prof-image {
+  height: 40px;
+  border-radius: 20px;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
+.welcome-healthy {
+  display: flex;
+  margin-bottom: 0;
   
-  .last-header {
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #008080;
-    vertical-align: middle;
-    margin-right: 70px;
-  }
+}
+
+.welcome-james {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: #136464;
+  margin-top: 100px;
+  margin-left: 10px;
+}
+
+.dashboard-on-page {
+  margin-bottom: 100px;
+}
+
+.first-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.blood-pressure {
+  background-color: #e6f9ff;
+}
+
+.bp-in {
+  margin: 50px;
+}
+
+.bp-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #008080;
+}
+
+.linesd {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.line1 {
+  background-color: green;
+  height: 90px;
+  width: 11px;
+  margin-left: 15px;
+}
+
+.line2 {
+  background-color: red;
+  height: 120px;
+  width: 11px;
+  margin-left: 15px;
+}
+
+.line3 {
+  background-color: green;
+  height: 90px;
+  width: 11px;
+  margin-left: 15px;
+}
+
+.line4 {
+  background-color: red;
+  height: 150px;
+  width: 11px;
+  margin-left: 15px;
+}
+
+.line5 {
+  background-color: green;
+  height: 80px;
+  width: 11px;
+  margin-left: 15px;
+}
+
+.bp-value {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-family: 18px;
+  color: #008080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
   
-  .last-header:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
+}
+
+.heart-rate {
+  background-color: #e6f9ff;
+}
+
+.hr-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #008080;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.hr-image {
+  height: 180px;
+  margin-left: 4px;
+  margin: 35px;
+}
+
+.hr-value {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-family: 18px;
+  color: #008080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.calendar {
+  height: 350px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  background-color: #e6f9ff;
+  border: none;
+}
+
+.cal-table {
+  height: 150px;
+  width: 20%;
+  border-collapse: collapse;
+  margin: 20px;
   
-  .last-header:active {
-    opacity: 0.5;
-  }
+}
+
+.calendar-heading {
+  color: white;
+  background-color: rgb(70, 66, 66);
+}
+
+.cal-table th {
+  border: 2px solid white;
+  padding: 10px;
+  text-align: center;
+}
+
+.cal-table td {
+  border: 2px solid white;
+  padding: 10px;
+  text-align: center;
+}
+
+.doctors-reminders {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctors {
+  background-color: #e6f9ff;
+  border-radius: 50px;
+  margin-top: 50px;
+}
+
+.doc-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #008080;
+}
+
+.doctor-images {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.doc-1 {
+  height: 50px;
+  border-radius: 25px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.doc-1:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.doc-1:active {
+  opacity: 0.5;
+}
+
+
+.doc-2 {
+  height: 50px;
+  border-radius: 25px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.doc-2:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.doc-2:active {
+  opacity: 0.5;
+}
+
+.doc-3 {
+  height: 50px;
+  border-radius: 25px;
+  width: 50px;
+  margin-right: 10px;
+}
+
+.doc-3:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.doc-3:active {
+  opacity: 0.5;
+}
+
+.doc-button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 0;
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  background-color: darkgray;
+}
+
+.doc-button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.doc-button:active {
+  opacity: 0.5;
+}
+
+
+.reminders {
+  margin-top: 30px;
+  background-color: #e6f9ff;
+  border-radius: 50px;
+}
+
+.rem {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #008080;
+}
+
+.rem-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  width: 300px;
+  color: #008080;
+  font-size: 18px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+
+}
+
+.lines {
+  margin-top: 0;
+  border-top: 1px solid black;
+}
+
+.second-row {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.emergency-call-button {
+  background-color: rgb(7, 7, 77);
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
   
-  .prof-image {
-    height: 40px;
-    border-radius: 20px;
-    vertical-align: middle;
-    margin-left: 20px;
-  }
-  
-  .on-page {
-    margin-top: 0px;
-    margin-left: 80px;
-    margin-right: 80px;
-    margin-bottom: 30px;
-    
-  }
-  
-  .first-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  
-  .bp-ht {
-    justify-content: space-around;
-    display: flex;
-    flex-direction: row;
-    margin-top: 70px;
-  }
-  
-  .welcome-healthy {
-    display: flex;
-    margin-bottom: 0;
-    
-  }
-  
-  .welcome-james {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 30px;
-    color: #136464;
-    margin-top: 100px;
-    margin-left: 10px;
-  }
-  
-  .healthy-container {
-    margin-top: 97px;
-    margin-left: 120px;
-  }
-  
-  .blood-pressure {
-    margin-left: 15px;
-  }
-  
-  .heart-rate {
-    margin-left: 50px;
-    margin-right: 30px;
-  
-  }
-  
-  .calender {
-    margin-right: 30px;
-  }
-  
-  
-  
-  .doctors {
-    margin-top: 40px;
-  }
-  
-  .reminders {
-    margin-top: 60px;
-  }
-  
-  .second-row {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 80px;
-  }
-  
-  .third-row {
-    margin-top: 70px;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .rv-label{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: #136464;
-  }
-  
-  .r-videos {
-    height: 400px;
-  }
-  
-  .sept {
-    height: 400px;
-  }
-  
-  .back-to-top {
-    position:static;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #136464;
-    color: white;
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .back-to-top:hover {
-    cursor: pointer;
-    text-decoration: underline;
-  }
-  
-  .back-to-top:active {
-    opacity: 0.8;
-  }
-  
+}
+
+.emergency-call-button-text {
+  display: inline-block;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: bold;
+}
+
+.telephone {
+  height: 50px;
+  border-radius: 35px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+
+.emergency-call-button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.emergency-call-button:active {
+  opacity: 0.5;
+}
+
+
+.details-table {
+  background-color: #e6f9ff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #008080;
+}
+
+
+.d-info th {
+  text-align: center;
+  padding-right: 60px;
+  padding-bottom: 15px;
+}
+
+.d-info td {
+  text-align: center;
+  padding-right: 60px
+}
+
+.third-row {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 40px;
+  ;
+}
+
+.first-two {
+  background-color: #e6f9ff;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.divide {
+  display: flex;
+  flex-direction: column;
+}
+
+.vids {
+  display: flex;
+  flex-direction: row;
+}
+
+.writings {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #008080;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.coloured {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.recommended-vid:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.recommended-vid:active {
+  opacity: 0.5;
+}
+
+.writing {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #008080;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+}
+
+.writing:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+.writing:active {
+  opacity: 0.4;
+}
+
+.back-to-top {
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #136464;
+  color: white;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-to-top:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.back-to-top:active {
+  opacity: 0.8;
+}
+
+.last-bar {
+  background-color: #e6f9ff;
+}
+
+.bar-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #008080;
+}
+
+/* Define the bar chart container */
+.bar-chart {
+  width: 550px; /* Increased width to accommodate the additional divs */
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  position: relative;
+  height: 250px;
+}
+
+/* Define the bars */
+.bar {
+  width: 40px; /* Adjust the width of the bars */
+  background-color: #3498db; /* Bar color */
+  position: absolute;
+  bottom: 0;
+  height: 250px; /* Set the height of all bars to 250px */
+}
+
+/* Label styling */
+.label {
+  text-align: center;
+  width: 60px; /* Adjust the width of the label container */
+  position: absolute;
+  bottom: -20px; /* Adjust the distance between bars and labels */
+  left: 50%; /* Center the label horizontally */
+  transform: translateX(-50%); /* Center the label horizontally */
+}
+
+/* Days of the week */
+.day-label {
+  position: absolute;
+  left: -80px; /* Adjust the distance between bars and day labels */
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Medication div */
+.medication {
+  position: absolute;
+  background-color: wheat;
+  border-radius: 10px; /* Adjust the border radius as needed */
+  padding: 10px; /* Add padding for spacing */
+  text-align: center;
+  left: 60px; /* Adjust the position as needed */
+  top: 100px; /* Adjust the position as needed */
+}
+
+/* Dentist div */
+.dentist {
+  position: absolute;
+  background-color: green;
+  border-radius: 10px; /* Adjust the border radius as needed */
+  padding: 10px; /* Add padding for spacing */
+  text-align: center;
+  left: 200px; /* Adjust the position as needed */
+  top: 200px; /* Adjust the position to move it down */
+}
