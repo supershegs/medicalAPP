@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Consultation Page</title>
+    <link rel="stylesheet" href="{% static 'css/booking.css' %}">
+  </head>
+  <body>
+    <div class="book-consultation-header">
+      <div class="medic-logo-container">
+        <img class="medic-old-logo" src="{% static 'icons/medic-old logo.jpg' %}">
+      </div>
+      {% if user %}
+        <a href="{% url 'dashboard' %}" style="text-decoration: none"> <div class="remaining-header">Dashboard</div> </a>
+        <a href="{% url 'reminder' %}" style="text-decoration: none"> <div class="remaining-header">Reminder</div> </a>
+        <a href="{% url 'history' %}"style="text-decoration: none"><div class="remaining-header">Health Information</div></a>
+        <a href="{% url 'activitiesTracker' %}" style="text-decoration: none"><div class="remaining-header">Activity Tracking</div></a>
+        <a href="{% url 'booking' %}"style="text-decoration: none"><div class="remaining-header">Book Consultation</div></a>
+        <a href="{% url 'about' %}"style="text-decoration: none"><div class="remaining-header">About</div></a>
+        <a href="{% url 'logout' %}"style="text-decoration: none"><div class="last-header">Logout <img class="prof-image" src="{{ user.avatar.url }}" alt="Avatar"></div></a>
+    </div>
+    <div class="on-page">
+      <form method='post'>
+        {% csrf_token %}
+        {% if message %}
+            <div class="alert alert-danger">
+                {{message}}
+            </div>
+        {% endif %}
+        <br><br>
+        {% if bookings  %}
+            {% for booking in bookings %}
+        <div class="symptoms">
+          <div class="symptoms-text">Enter your symptoms to get started</div>
+          <div class="texts-inputs">
+            <div class="tag-symptoms">Enter your Symptoms and Allergies :</div>
+            <div class="ss">
+                <input class="first-input" name="symptoms" id="symptoms" type="text" value="{{ booking.symptoms }}">
+                <input class="second-input" name="allergies" id="allergies" type="text" value="{{ booking.allergies }}">
+            </div>
+          </div>
+          <div class="tag-doctors">
+            <p class="tag-doc">Selected doctor:</p>
+            <input class="second-input" name="consultant" id="consultant" type="text" value="{{ booking.consultant }}">
+          </div>
+            {%endfor%}
+          {%endif%}
+          <br>
+          <a href="{% url 'deletelist' %}" style="text-decoration: none">&plus; cancel your booking</a>
+          <div class="book">
+            <button class="book-button">Edit Booking</button>
+            <div class="book-text">Find a Doctor close to you</div>
+          </div>
+      </form>
+    
+      </div>
+      <div class="live-consultation">
+        <div class="consult-text">Live Consultation</div>
+        <div class="doctors">
+          <p class="doc-text">Chat with Doctors online</p>
+            <div class="doctor-images">
+              <img class="doc-1" src="{% static 'icons/book-cons(doc1).jpg' %}">
+              <button class="doc-button">&plus;3</button>
+            </div>
+      </div>
+    {% endif %}
+      </div>
+  </body>
+</html>

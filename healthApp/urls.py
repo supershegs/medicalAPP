@@ -24,7 +24,10 @@ urlpatterns = [
     path('activitiesTracker', activityView.as_view(), name='activitiesTracker'),
     path('logout', logoutView.as_view(), name='logout'),
     path('video', VideoView.as_view(), name='recommended_video'),
-    path('about', AboutView.as_view(), name= 'about')
+    path('about', AboutView.as_view(), name= 'about'),
+    path('booking', bookView.as_view(), name='booking'),
+    path('bookinglist', bookinglistView.as_view(), name='bookinglist'),
+    path('deletelist', DeleteBookingView.as_view(), name= 'deletelist')
     # path('user', Userview.as_view())
 ]
 

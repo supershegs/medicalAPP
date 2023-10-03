@@ -111,3 +111,12 @@ class HealthInformation(models.Model):
 
     def __str__(self):
         return f"Health Information for {self.user.name}"
+    
+class Booking(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    symptoms = models.CharField(max_length=300)
+    allergies = models.CharField(max_length=300)
+    consultant = models.ForeignKey(Consultant, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"Boking details for {self.user.name}"

@@ -1,0 +1,232 @@
+.activities-header {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    background-color: #e6f9ff;
+    justify-content: space-between;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 70px;
+    align-items: center;
+  }
+  
+  .medic-old-logo {
+    height: 50px;
+    margin-left: 60px;
+    vertical-align: middle;
+  }
+  
+  .medic-logo-container {
+    height: 40px;
+    vertical-align: middle;
+    
+  }
+  
+  .remaining-header {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #008080;
+    
+    
+  }
+  
+  .remaining-header:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .remaining-header:active {
+    opacity: 0.5;
+  }
+  
+  
+  
+  .last-header {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #008080;
+    vertical-align: middle;
+    margin-right: 70px;
+  }
+  
+  .last-header:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  .last-header:active {
+    opacity: 0.5;
+  }
+  
+  .prof-image {
+    height: 40px;
+    border-radius: 20px;
+    vertical-align: middle;
+    margin-left: 20px;
+  }
+
+  .activities-on-page {
+    margin-top: 100px;
+    }
+    
+    .first-row {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      
+    }
+    
+    .breathing-pic {
+      height: 330px;
+      
+    }
+    
+    .first-p {
+      font-size: 20px;
+      text-align: center;
+      justify-content: center;
+    }
+    
+    
+    
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+    
+    .seatch-activities-button {
+      display: block;
+      background-color: #070777;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      
+    }
+    
+    .seatch-activities-button:hover {
+      opacity: 0.8;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    
+    .seatch-activities-button:active {
+      opacity: 0.5;
+    }
+    
+    .second-row {
+      background-color: rgb(233, 229, 229);
+      margin-top: 50px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    
+    .text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 22px;
+    }
+    
+    .images-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      }
+    
+      .images:hover {
+        cursor: pointer;
+        opacity: 0.8;
+      }
+    
+      .images:active {
+        opacity: 0.5;
+      }
+    
+    
+    .Search-videos-button {
+      display: block;
+      background-color: #070777;
+      padding-left: 2px;
+      padding-right: 2px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      color: white;
+      border: none;
+      border-radius: 18px;
+    }
+    
+    .Search-videos-button:hover {
+      opacity: 0.8;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    
+    .Search-videos-button:active {
+      opacity: 0.5;
+    }
+    
+    
+    .third-row {
+      background-color: rgb(233, 219, 200);
+      height: 200px;
+      position: static;
+      
+    }
+    
+    .connect-text {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    
+    .connect-text:hover {
+      cursor: pointer;
+      text-decoration: underline;
+      opacity: 0.9;
+    }
+    
+    .connect-text:active {
+      opacity: 0.6;
+    }
+    
+    .the-logos {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      position: static;
+      bottom: 0;
+      align-self: flex-end;
+    }
+    
+    .logos {
+      height: 100px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      margin-right: 10px;
+      
+    }
+    
+    .logos:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+    
+    .logos:active {
+      opacity: 0.5;
+    }

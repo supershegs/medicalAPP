@@ -84,14 +84,14 @@ WSGI_APPLICATION = "Healthfitness.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
 DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    }
+}
+
+# DATABASES = {
     # 'default': {   
     #     'ENGINE': config('ENGINE'),
     #     'NAME': config('NAME'),
@@ -100,9 +100,9 @@ DATABASES = {
     #     'HOST': config('HOST'),
     #     'PORT': config('PORT'),
     # }
-}
+# }
 
-DATABASES["default"] = dj_database_url.parse(config('DATABASE_URL'))
+# DATABASES["default"] = dj_database_url.parse(config('DATABASE_URL'))
 # default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, "db.sqlite3")
 
 # DATABASE = {'default': config('DATABASE_URL', default= default_dburl, cast=parse)}

@@ -5,8 +5,8 @@ from django.views import View
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from .forms import CustomUserCreationForm, AppointmentForm, reminderForm,ConsultantForm,HealthInformationForm
-from .models import Appointment, Reminder, Consultant,HealthInformation
+from .forms import *
+from .models import *
 
 from rest_framework import status
 
@@ -232,8 +232,6 @@ class HealthInformationUpdate(View):
            
     def post(self, request, pk):
         if request.user.is_authenticated:
-            import pdb
-            pdb.set_trace()
             health_info = HealthInformation.objects.filter(user=request.user,pk=pk)
             form = HealthInformationForm(request.POST, instance=health_info)
             consultants =   Consultant.objects.all()
@@ -245,7 +243,7 @@ class HealthInformationUpdate(View):
         return render(request,'health_information_update.html',  
                       {'form': form,
                 'health_info': health_info,
-                'consultants': consultants, **videos} )
+                'consultants': consultants} )
 
 
 
@@ -397,4 +395,68 @@ class VideoView(View):
             }
             return render(request, 'video.html', context= videos)
         return redirect('index')
-            
+
+class bookinglistView(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            bookings = Booking.objects.filter(user=request.user).first()
+            return render(request, 'bookinglist.html', {'bookings': bookings})
+    def post(self, request):
+        import pdb
+        pdb.set_trace()
+        bookings = Booking.objects.filter(user=request.user).first()
+        if bookings and bookings.user == request.user:
+            form = BookingForm(request.POST, instance=bookings)  # Pass the instance to the form
+            if form.is_valid():
+                form.save()  # This will update the existing booking
+                return redirect('bookinglist')
+            else:
+                return render(request, 'bookinglist.html', {'form': form, 'booking': bookings})
+        return redirect('booking_list')
+
+    
+class bookView(View):
+    def get(self, request):
+        if request.user.is_authenticated:
+            consultants =   Consultant.objects.all()
+            return render(request,'booking.html', {'consultants': consultants})
+        return redirect('index')
+    def post(self, request):
+        if request.user.is_authenticated:
+            consultants =   Consultant.objects.all()
+            form = BookingForm(request.POST)
+            bookings = Booking.objects.filter(user=request.user)
+            if not bookings.exists():
+                if not consultants.exists():
+                    error = 'No active consultant'
+                    return render(request,'booking.html', {'error': error})
+                else: 
+                    if form.is_valid():
+                        booking = form.save(commit=False)
+                        booking.user = request.user
+                        booking.save()
+                        message = 'Successfully booked we will contact you shortly'
+                        return render(request, 'bookinglist.html', {'message': message})
+                    return render(request,'booking.html', {'form': form, 'consultants': consultants})
+            else:
+                message= 'You have a pending booking, you can not create new booking, awaiting approval'
+                return render(request, 'bookinglist.html', {'bookings': bookings, 'message': message})
+                
+class DeleteBookingView(View):
+    def post(self, request):
+        import pdb
+        pdb.set_trace()
+        if request.user.is_authenticated:
+            booking = Booking.objects.filter(user=request.user).first()
+            if booking and booking.user == request.user:
+                booking.delete()
+            return redirect('booking')  
+
+# class UpdateBookingView(View):
+#     def get(self, request):
+#         booking = Booking.objects.filter(user=request.user).first()
+#         if booking and booking.user == request.user:
+#             form = BookingForm(instance=booking)
+#             return render(request, 'update_booking.html', {'form': form, 'booking': booking})
+#         return redirect('booking')
+    
