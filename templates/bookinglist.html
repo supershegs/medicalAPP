@@ -53,7 +53,7 @@
           <div class="tag-doctors">
             <p class="tag-doc">Select doctor:</p>
             <select class="third-input" name="consultant" id="consultant">
-              <option value="">{{booking.consultant}}</option>
+              <option value="">{{booking.consultant}}(selected)</option>
               {% for consultant in consultants %}
                 <option value="{{ consultant.id }}">{{ consultant.name }}</option>
               {% endfor %}
