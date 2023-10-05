@@ -399,27 +399,34 @@ class VideoView(View):
 class bookinglistView(View):
     def get(self, request):
         if request.user.is_authenticated:
-            bookings = Booking.objects.filter(user=request.user).first()
-            return render(request, 'bookinglist.html', {'bookings': bookings})
+            consultants =   Consultant.objects.all()
+            bookings = Booking.objects.filter(user=request.user)
+            print('let us deal:',bookings)
+            return render(request, 'bookinglist.html', {'bookings': bookings, 'consultants': consultants})
     def post(self, request):
-        import pdb
-        pdb.set_trace()
         bookings = Booking.objects.filter(user=request.user).first()
+        consultants =   Consultant.objects.all()
+        print(bookings)
         if bookings and bookings.user == request.user:
-            form = BookingForm(request.POST, instance=bookings)  # Pass the instance to the form
+            form = BookingForm(request.POST, instance=bookings) 
+            print(form) # Pass the instance to the form
             if form.is_valid():
                 form.save()  # This will update the existing booking
                 return redirect('bookinglist')
             else:
-                return render(request, 'bookinglist.html', {'form': form, 'booking': bookings})
+                return render(request, 'bookinglist.html', {'form': form, 'booking': bookings, 'consultants': consultants})
         return redirect('booking_list')
 
     
 class bookView(View):
     def get(self, request):
         if request.user.is_authenticated:
-            consultants =   Consultant.objects.all()
-            return render(request,'booking.html', {'consultants': consultants})
+            bookings = Booking.objects.filter(user=request.user)
+            if not bookings.exists():
+                consultants =   Consultant.objects.all()
+                return render(request,'booking.html', {'consultants': consultants})
+            else:
+                return redirect('bookinglist')
         return redirect('index')
     def post(self, request):
         if request.user.is_authenticated:
@@ -435,6 +442,7 @@ class bookView(View):
                         booking = form.save(commit=False)
                         booking.user = request.user
                         booking.save()
+                        print(booking)
                         message = 'Successfully booked we will contact you shortly'
                         return render(request, 'bookinglist.html', {'message': message})
                     return render(request,'booking.html', {'form': form, 'consultants': consultants})

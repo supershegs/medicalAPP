@@ -160,13 +160,13 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATIC_ROOT = 'C:\\Users\\oluwasegun.tinuala\\Desktop\\medicalApp\\new_static'
 
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # STATIC_ROOT = r'C:\Users\oluwasegun.tinuala\Desktop\medicalApp\new_static'
 
 if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'new_static')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
+   
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
