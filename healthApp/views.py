@@ -424,7 +424,8 @@ class bookView(View):
             bookings = Booking.objects.filter(user=request.user)
             if not bookings.exists():
                 consultants =   Consultant.objects.all()
-                return render(request,'booking.html', {'consultants': consultants})
+                message= 'You have a pending booking, you can not create new booking, awaiting approval '
+                return render(request,'booking.html', {'consultants': consultants, 'message': message})
             else:
                 return redirect('bookinglist')
         return redirect('index')
